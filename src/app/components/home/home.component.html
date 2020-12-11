@@ -1,0 +1,56 @@
+<div class="card">
+  <h4 class="card-header">User Details</h4>
+  <div class="card-body">
+    <table class="table">
+      <tbody>
+        <tr>
+          <td>FirstName </td>
+          <td>{{user.firstName}}</td>
+        </tr>
+        <tr>
+          <td>LastName </td>
+          <td>{{user.lastName}}</td>
+        </tr>
+        <tr>
+          <td>Email-ID </td>
+          <td>{{user.emailid}}</td>
+        </tr>
+        <tr>
+          <td>Mobile No</td>
+          <td>{{user.gender}}</td>
+        </tr>
+        <tr>
+          <td>Gender</td>
+          <td>{{user.mobileno}}</td>
+        </tr>
+        <tr>
+          <td>Address</td>
+          <td>{{user.address}}</td>
+        </tr>
+        <tr *ngIf="user.curl">
+          <td>Certificate</td>
+          <td><button class="btn btn-success" (click)="downloadMyFile(user.curl)">Download</button>
+            </td>
+          </tr>
+          <tr *ngIf="user.purl">
+            <td>Photo</td>
+            <td><button class="btn btn-success" (click)="downloadMyFile(user.purl)">Download</button>
+              </td>
+            </tr>
+            <tr *ngIf="user.rurl">
+              <td>Resume</td>
+              <td><button class="btn btn-success" (click)="downloadMyFile(user.rurl)">Download</button>
+                </td>
+              </tr>
+        </tbody>
+      </table>
+      <button routerLink="/fileupload" style="align-content:center;" class="btn btn-primary">File Upload</button>
+      <hr>
+      <button (click)="logout()" style="align-content:center;" class="btn-danger btn-lg btn-block">LogOut</button>
+  </div>
+</div>
+
+
+
+
+

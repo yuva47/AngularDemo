@@ -1,0 +1,52 @@
+<div class="card">
+  <h4 class="card-header">File Upload</h4>
+  <div class="card-body">
+        <div class="form-group">
+          <label for="exampleFormControlFile1">Certificate</label>
+          <input (change)="oncChange($event)" type="file" class="form-control-file" >
+        </div>
+
+          <div class="form-group">
+              <button (click)="onUpload('curl')" class="btn btn-primary">
+                  <span  *ngIf="cloading" class="spinner-border spinner-border-sm mr-1"></span>
+                  Upload
+             </button>
+
+          </div>
+
+          <hr>
+          <div class="form-group">
+            <label for="exampleFormControlFile1">Photo</label>
+            <input (change)="onpChange($event)" type="file" class="form-control-file" >
+          </div>
+
+            <div class="form-group">
+                <button (click)="onUpload('purl')" class="btn btn-primary">
+                    <span  *ngIf="ploading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Upload
+                </button>
+            </div>
+            <hr>
+            <div class="form-group">
+              <label for="exampleFormControlFile1">Resume</label>
+              <input (change)="onrChange($event)" type="file" class="form-control-file" >
+            </div>
+
+              <div class="form-group">
+                  <button (click)="onUpload('rurl')" class="btn btn-primary">
+                      <span  *ngIf="rloading" class="spinner-border spinner-border-sm mr-1"></span>
+                      Upload
+                  </button>
+              </div>
+              <hr>
+              <button routerLink="/home" (click)="onUpload('rurl')" class="btn-secondary btn-lg btn-block">
+                Go to Home
+              </button>
+
+
+  </div>
+</div>
+
+<div *ngIf="msg!=null" [ngClass]="msgclass" role="alert">
+  {{msg}}
+</div>
